@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {PropTypes} from 'prop-types';
-import SubmitButton from '../components/SubmitButton';
+import DrugSelection from '../components/DrugSelection';
+import DrugDisplay from '../components/DrugDisplay';
+import {connet} from 'react-redux';
 
-class HomeContainer extends  Component {
+export default class HomeContainer extends  Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,18 +16,32 @@ class HomeContainer extends  Component {
 
 
         render( ) {
-           const {} = this.props;
-
+           const {title, index} = this.props;
             return (
                 <div className="home-container">
-                    <SubmitButton/>
+                        <DrugSelection
+                            index={index}
+                            title={title}
+                        />
+
+
+                        <DrugDisplay/>
 
                 </div>
             );
         }
 
+    };
 
 
-    }
-    export default HomeContainer;
+function mapStateToProps(state) {
+
+
+}
+
+HomeContainer.PropTypes = {
+   title: propTypes.String,
+    index: propTypes.String
+};
+
 
