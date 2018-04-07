@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge  } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge, Row, Col  } from 'reactstrap';
 
 export default class DrugSelection extends React.Component {
     constructor(props) {
@@ -20,21 +20,33 @@ export default class DrugSelection extends React.Component {
     render() {
         return (
             <div>
-            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                <DropdownToggle caret>
-                    Drug List
-                </DropdownToggle>
-                <DropdownMenu>
-                    <DropdownItem>Drug1</DropdownItem>
-                    <DropdownItem>Drug2</DropdownItem>
-                    <DropdownItem>Drug3</DropdownItem>
-                    <DropdownItem>Drug4</DropdownItem>
-                    <DropdownItem>Drug5</DropdownItem>
-                </DropdownMenu>
-            </Dropdown>
 
-                <Badge color="primary">Current Drug Name</Badge>
+
+                <Row>
+
+                    <Col>
+                        <Badge color="primary">Current Drug Name</Badge>
+                    </Col>
+
+                    <Col>
+                        <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                            <DropdownToggle caret>
+                                Drug List
+                            </DropdownToggle>
+                            <DropdownMenu>
+                                <DropdownItem>Drug1</DropdownItem>
+                                <DropdownItem>Drug2</DropdownItem>
+                                <DropdownItem>Drug3</DropdownItem>
+                                <DropdownItem>Drug4</DropdownItem>
+                                <DropdownItem>Drug5</DropdownItem>
+                            </DropdownMenu>
+                        </Dropdown>
+                    </Col>
+
+                </Row>
             </div>
+
+
         );
     }
 }

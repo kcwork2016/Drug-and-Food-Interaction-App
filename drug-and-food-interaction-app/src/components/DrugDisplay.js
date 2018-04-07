@@ -1,19 +1,28 @@
 import React from 'react';
-import {ListGroup, ListGroupItem, Button} from 'reactstrap';
-// import 'drugDisplay.css';
+import {CardBody, ListGroup, ListGroupItem, Button} from 'reactstrap';
+import '../components/drugDisplay.scss';
 
 export default class Example extends React.Component {
     render() {
         return (
             <div>
-                <ListGroup>
+
+                <CardBody>
+                    Prescription Name:
                     <ListGroupItem>Interaction Drug Name</ListGroupItem>
-                    <ListGroupItem>Interaction Food Name</ListGroupItem>
-                    <ListGroupItem>Infraction Indicator</ListGroupItem>
+                </CardBody>
 
-                </ListGroup>
+                <CardBody>
+                    Drug and Food Interaction Info:
+                    <ListGroup>
+                    <ListGroupItem>Interaction Drug Name</ListGroupItem>
+                    <ListGroupItem>Interaction Drug Name</ListGroupItem>
+                    </ListGroup>
+                </CardBody>
 
+                <div className="div-main-button">
                 <Button color="primary">primary button</Button>{' '}
+                </div>
 
 
                 </div>
