@@ -10,7 +10,7 @@ class HomeContainer extends  Component {
         };
         //function goes here
         // this.handleRadioOnClick = this.handleRadioOnClick.bind(this);
-    }
+    };
 
 
         render( ) {
