@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {PropTypes} from 'prop-types';
+import { PropTypes } from 'prop-types';
 import DrugSelection from '../components/DrugSelection';
 import DrugDisplay from '../components/DrugDisplay';
-import {connet} from 'react-redux';
 
 export default class HomeContainer extends  Component {
     constructor(props) {
@@ -20,8 +19,6 @@ export default class HomeContainer extends  Component {
             return (
                 <div className="home-container">
                         <DrugSelection
-                            index={index}
-                            title={title}
                         />
 
 
@@ -39,9 +36,9 @@ function mapStateToProps(state) {
 
 }
 
-HomeContainer.PropTypes = {
-   title: propTypes.String,
-    index: propTypes.String
-};
+// HomeContainer.PropTypes = {
+//    title: propTypes.String,
+//     index: propTypes.String
+// };
 
 

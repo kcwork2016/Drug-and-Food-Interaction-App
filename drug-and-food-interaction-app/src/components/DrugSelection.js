@@ -1,13 +1,36 @@
 import React from 'react';
-import { Button, Panel } from 'react-bootstrap';
-import '../css/bootstrap-theme.min.css';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'react-bootstrap';
 
+export default class DrugSelection extends React.Component {
+    constructor(props) {
+        super(props);
 
-export default function DrugDisplay (props) {
-    return (
-        <div className="div-drug-selection">
-        <Button/>
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            dropdownOpen: false
+        };
+    }
 
-        </div>
-    );
-};
+    toggle() {
+        this.setState({
+            dropdownOpen: !this.state.dropdownOpen
+        });
+    }
+
+    render() {
+        return (
+            <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                <DropdownToggle caret>
+                    Dropdown
+                </DropdownToggle>
+                <DropdownMenu>
+                    <DropdownItem header>Header</DropdownItem>
+                    <DropdownItem disabled>Action</DropdownItem>
+                    <DropdownItem>Another Action</DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem>Another Action</DropdownItem>
+                </DropdownMenu>
+            </Dropdown>
+        );
+    }
+}
