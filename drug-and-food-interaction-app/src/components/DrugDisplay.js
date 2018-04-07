@@ -1,13 +1,23 @@
 import React from 'react';
-import { Button, Panel } from 'react-bootstrap';
-import '../css/bootstrap-theme.min.css';
+import {ListGroup, ListGroupItem, Button} from 'reactstrap';
+// import 'drugDisplay.css';
+
+export default class Example extends React.Component {
+    render() {
+        return (
+            <div>
+                <ListGroup>
+                    <ListGroupItem>Interaction Drug Name</ListGroupItem>
+                    <ListGroupItem>Interaction Food Name</ListGroupItem>
+                    <ListGroupItem>Infraction Indicator</ListGroupItem>
+
+                </ListGroup>
+
+                <Button color="primary">primary button</Button>{' '}
 
 
-export default function DrugDisplay (props) {
-    return (
-        <div className="div-drug-display">
-            <Button/>
+                </div>
 
-        </div>
-    );
-};
+        );
+    }
+}

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { PropTypes } from 'prop-types';
 import DrugSelection from '../components/DrugSelection';
 import DrugDisplay from '../components/DrugDisplay';
+import { Badge } from 'reactstrap';
+
 
 export default class HomeContainer extends  Component {
     constructor(props) {
@@ -18,6 +20,7 @@ export default class HomeContainer extends  Component {
            const {title, index} = this.props;
             return (
                 <div className="home-container">
+                    <h2>Drug & Food Interaction App</h2>
                         <DrugSelection
                         />
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge  } from 'reactstrap';
 
 export default class DrugSelection extends React.Component {
     constructor(props) {
@@ -19,18 +19,22 @@ export default class DrugSelection extends React.Component {
 
     render() {
         return (
+            <div>
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                 <DropdownToggle caret>
-                    Dropdown
+                    Drug List
                 </DropdownToggle>
                 <DropdownMenu>
-                    <DropdownItem header>Header</DropdownItem>
-                    <DropdownItem disabled>Action</DropdownItem>
-                    <DropdownItem>Another Action</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem>Another Action</DropdownItem>
+                    <DropdownItem>Drug1</DropdownItem>
+                    <DropdownItem>Drug2</DropdownItem>
+                    <DropdownItem>Drug3</DropdownItem>
+                    <DropdownItem>Drug4</DropdownItem>
+                    <DropdownItem>Drug5</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
+
+                <Badge color="primary">Current Drug Name</Badge>
+            </div>
         );
     }
 }
