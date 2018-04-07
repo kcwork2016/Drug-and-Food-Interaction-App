@@ -17,12 +17,11 @@ export default class HomeContainer extends  Component {
 
 
         render( ) {
-           const {title, index} = this.props;
+           const {} = this.props;
             return (
                 <div className="home-container">
-                    <h2>Drug & Food Interaction App</h2>
-                        <DrugSelection
-                        />
+                    <h3>Drug & Food Interaction App</h3>
+                        <DrugSelection/>
 
 
                         <DrugDisplay/>
@@ -33,11 +32,6 @@ export default class HomeContainer extends  Component {
 
     };
 
-
-function mapStateToProps(state) {
-
-
-}
 
 // HomeContainer.PropTypes = {
 //    title: propTypes.String,

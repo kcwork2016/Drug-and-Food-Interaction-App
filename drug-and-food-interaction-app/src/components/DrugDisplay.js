@@ -24,9 +24,7 @@ export default class Example extends React.Component {
                 <Button color="primary">primary button</Button>{' '}
                 </div>
 
-
                 </div>
-
         );
     }
 }
