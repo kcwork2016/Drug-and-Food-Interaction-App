@@ -18,7 +18,7 @@ export default function  DrugDisplay (props){
                     </CardBody>
 
                     <CardBody>
-                        Food you should void when taking this medication:
+                        Food you should avoid when taking this medication:
                         <ListGroup>
                             {foodList}
                         </ListGroup>

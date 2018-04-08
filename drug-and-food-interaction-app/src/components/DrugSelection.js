@@ -26,7 +26,7 @@ export default class DrugSelection extends React.Component {
             <div>
                 <Row>
                     <Col>
-                        <Badge color="success">Current Prescription {drugList.length}</Badge>
+                        <Badge color="success">Select the Drug from the Drug List ({drugList.length})</Badge>
                     </Col>
                     <Col>
                         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>

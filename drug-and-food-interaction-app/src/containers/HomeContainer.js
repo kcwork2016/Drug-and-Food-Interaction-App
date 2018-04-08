@@ -67,10 +67,12 @@ export default class HomeContainer extends  Component {
            const {  } = this.props;
             return (
                 <div className="div-home-container">
-
+                    <h1>
                     <Breadcrumb>
-                        <BreadcrumbItem >Drug & Food Interaction App</BreadcrumbItem>
-                    </Breadcrumb>
+                                            <BreadcrumbItem >Drug & Food Interaction App</BreadcrumbItem>
+                                        </Breadcrumb>
+                    </h1>
+
 
                         <DrugSelection
                             drugNames = { this.state.drugNames }
