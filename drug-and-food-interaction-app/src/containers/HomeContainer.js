@@ -16,6 +16,23 @@ export default class HomeContainer extends  Component {
     };
 
 
+    componentDidMount() {
+        this.HomeContainer();
+    }
+
+    HomeContainer() {
+        $.getJSON("https://postman-echo.com/headers").then(results => {
+            return results.json();
+        }).then(date => {
+            let serviceData = data.results.map(info) => {
+                return(
+                    <div key={info.results}>
+                    </div>
+                )
+            }
+        })
+    }
+
         render( ) {
            const {} = this.props;
             return (
