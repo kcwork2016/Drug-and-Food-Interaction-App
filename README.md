@@ -1,2 +1,1 @@
-# Drug-and-Food-Interaction-App
-This is a Drug and Food Interaction client App
+HealthHack 2018 Project
