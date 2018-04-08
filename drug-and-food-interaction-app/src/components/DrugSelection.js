@@ -19,7 +19,7 @@ export default class DrugSelection extends React.Component {
     render() {
         const { drugNames, drugSelectionOnClick } = this.props;
         const drugList = drugNames.map(function (drugNames) {
-            return <DropdownItem    onClick = {drugSelectionOnClick}>{drugNames}</DropdownItem>
+            return <DropdownItem onClick = {drugSelectionOnClick}>{drugNames}</DropdownItem>
         });
 
         return (
