@@ -3,6 +3,7 @@ import { PropTypes } from 'prop-types';
 import DrugSelection from '../components/DrugSelection';
 import DrugDisplay from '../components/DrugDisplay';
 import { Badge } from 'reactstrap';
+import  drugNames from '../services/mockData/drugData';
 
 
 export default class HomeContainer extends  Component {
@@ -16,37 +17,25 @@ export default class HomeContainer extends  Component {
     };
 
 
-    componentDidMount() {
-        this.HomeContainer();
-    }
-
-    HomeContainer() {
-        $.getJSON("https://postman-echo.com/headers").then(results => {
-            return results.json();
-        }).then(date => {
-            let serviceData = data.results.map(info) => {
-                return(
-                    <div key={info.results}>
-                    </div>
-                )
-            }
-        })
-    }
-
         render( ) {
-           const {} = this.props;
+            const foodNames = ['food1', 'food2','food3','food4'];
+           const drugNames = ['Drug1', 'Drug2','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1'];
+           const {  } = this.props;
             return (
                 <div className="home-container">
                     <h3>Drug & Food Interaction App</h3>
-                        <DrugSelection/>
+                        <DrugSelection
+                            drugNames = { drugNames }
+                        />
 
+                        <DrugDisplay
+                            foodNames = {foodNames}
 
-                        <DrugDisplay/>
+                        />
 
                 </div>
             );
         }
-
     };
 
 

@@ -2,29 +2,33 @@ import React from 'react';
 import {CardBody, ListGroup, ListGroupItem, Button} from 'reactstrap';
 import '../components/drugDisplay.scss';
 
-export default class Example extends React.Component {
-    render() {
+export default function  DrugDisplay (props){
+
+      const { handleButtonOnClick, foodNames } = props;
+
+        const foodList = foodNames.map(function (foodNames) {
+            return <ListGroupItem>{foodNames}</ListGroupItem>
+        });
+
         return (
             <div>
+                    <CardBody>
+                        Prescription Name:
+                        <ListGroupItem>Lipitor 30mg</ListGroupItem>
+                    </CardBody>
 
-                <CardBody>
-                    Prescription Name:
-                    <ListGroupItem>Interaction Drug Name</ListGroupItem>
-                </CardBody>
+                    <CardBody>
+                        Food Should be Avoid (when taking this medication):
+                        <ListGroup>
+                            {foodList}
+                        </ListGroup>
+                    </CardBody>
 
-                <CardBody>
-                    Drug and Food Interaction Info:
-                    <ListGroup>
-                    <ListGroupItem>Interaction Drug Name</ListGroupItem>
-                    <ListGroupItem>Interaction Drug Name</ListGroupItem>
-                    </ListGroup>
-                </CardBody>
-
-                <div className="div-main-button">
-                <Button color="primary">primary button</Button>{' '}
-                </div>
-
+                    <div className="div-main-button">
+                    <Button color="primary"
+                        handleButtonOnClick = {handleButtonOnClick}
+                    >Check Interaction</Button>
+                    </div>
                 </div>
         );
     }
-}

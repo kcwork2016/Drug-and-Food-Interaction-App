@@ -1,7 +1,6 @@
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge, Row, Col  } from 'reactstrap';
 
-
 export default class DrugSelection extends React.Component {
     constructor(props) {
         super(props);
@@ -18,11 +17,19 @@ export default class DrugSelection extends React.Component {
     }
 
     render() {
+
+        const drugNames = ['Drug1', 'Drug2','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1'];
+
+        const drugList = drugNames.map(function (drugNames) {
+            return <DropdownItem>{drugNames}</DropdownItem>
+        });
+
+
         return (
             <div>
                 <Row>
                     <Col>
-                        <Badge color="primary">Current Drug Name</Badge>
+                        <Badge color="primary">Available Prescription</Badge>
                     </Col>
 
                     <Col>
@@ -31,27 +38,13 @@ export default class DrugSelection extends React.Component {
                                 Drug List
                             </DropdownToggle>
                             <DropdownMenu>
-                                <DropdownItem>Drug1</DropdownItem>
-                                <DropdownItem>Drug2</DropdownItem>
-                                <DropdownItem>Drug3</DropdownItem>
-                                <DropdownItem>Drug4</DropdownItem>
-                                <DropdownItem>Drug5</DropdownItem>
-
-                                {/*<DropdownItem*/}
-                                    {/*{this.props.drugList.map(function (drugName) {*/}
-                                        {/*return <DropdownItem>{drugName}</DropdownItem>;*/}
-                                    {/*})}*/}
-                                {/*/>*/}
-
+                          {drugList}
                             </DropdownMenu>
                         </Dropdown>
                     </Col>
 
                 </Row>
             </div>
-
-            // {friends.map(p => <li key={p.id}>{p.name}</li>)}
-
         );
     }
 }
