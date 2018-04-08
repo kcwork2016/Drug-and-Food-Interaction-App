@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Badge, Row, Col  } from 'reactstrap';
-
+import '../css/DrugSelection.scss';
 export default class DrugSelection extends React.Component {
     constructor(props) {
         super(props);
@@ -17,21 +17,17 @@ export default class DrugSelection extends React.Component {
     }
 
     render() {
-
-        const drugNames = ['Drug1', 'Drug2','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1'];
-
+        const { drugNames, drugSelectionOnClick } = this.props;
         const drugList = drugNames.map(function (drugNames) {
-            return <DropdownItem>{drugNames}</DropdownItem>
+            return <DropdownItem    onClick = {drugSelectionOnClick}>{drugNames}</DropdownItem>
         });
-
 
         return (
             <div>
                 <Row>
                     <Col>
-                        <Badge color="primary">Available Prescription</Badge>
+                        <Badge color="success">Current Prescription {drugList.length}</Badge>
                     </Col>
-
                     <Col>
                         <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                             <DropdownToggle caret>
@@ -42,7 +38,6 @@ export default class DrugSelection extends React.Component {
                             </DropdownMenu>
                         </Dropdown>
                     </Col>
-
                 </Row>
             </div>
         );

@@ -1,10 +1,10 @@
 import React from 'react';
 import {CardBody, ListGroup, ListGroupItem, Button} from 'reactstrap';
-import '../components/drugDisplay.scss';
+import '../css/DrugDisplay.scss';
 
 export default function  DrugDisplay (props){
 
-      const { handleButtonOnClick, foodNames } = props;
+      const { handleButtonOnClick, foodNames, currentDrugName } = props;
 
         const foodList = foodNames.map(function (foodNames) {
             return <ListGroupItem>{foodNames}</ListGroupItem>
@@ -14,7 +14,7 @@ export default function  DrugDisplay (props){
             <div>
                     <CardBody>
                         Prescription Name:
-                        <ListGroupItem>Lipitor 30mg</ListGroupItem>
+                        <ListGroupItem>{currentDrugName}</ListGroupItem>
                     </CardBody>
 
                     <CardBody>
@@ -26,7 +26,7 @@ export default function  DrugDisplay (props){
 
                     <div className="div-main-button">
                     <Button color="primary"
-                        handleButtonOnClick = {handleButtonOnClick}
+                        onClick = {handleButtonOnClick}
                     >Check Interaction</Button>
                     </div>
                 </div>

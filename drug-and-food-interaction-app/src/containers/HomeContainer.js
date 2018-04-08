@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import { PropTypes } from 'prop-types';
 import DrugSelection from '../components/DrugSelection';
 import DrugDisplay from '../components/DrugDisplay';
-import { Badge } from 'reactstrap';
-import  drugNames from '../services/mockData/drugData';
+import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
+import '../css/HomeContainer.scss';
 
 
 export default class HomeContainer extends  Component {
@@ -13,26 +13,40 @@ export default class HomeContainer extends  Component {
             //add state val
         };
         //function goes here
-        // this.handleRadioOnClick = this.handleRadioOnClick.bind(this);
+        this.handleButtonOnClick = this.handleButtonOnClick.bind(this);
+        this.drugSelectionOnClick = this.drugSelectionOnClick.bind(this);
     };
 
+    handleButtonOnClick() {
+        this.foodNames = ['1', '2','Eggs','3'];
+        console.log("click")
+    }
+
+    drugSelectionOnClick(){
+        console.log("drug click")
+    }
 
         render( ) {
-            const foodNames = ['food1', 'food2','food3','food4'];
-           const drugNames = ['Drug1', 'Drug2','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1','Drug1'];
+            const foodNames = ['Meat', 'Seafood','Eggs','Nuts'];
+           const drugNames = ['Zoloft', 'Adderall','Alprazolam','Cymbalta','Metoprolol','Lexapro','Viagra','Omeprazole'];
+           const currentDrugName = "Lipitor 30mg";
            const {  } = this.props;
             return (
-                <div className="home-container">
-                    <h3>Drug & Food Interaction App</h3>
+                <div className="div-home-container">
+
+                    <Breadcrumb>
+                        <BreadcrumbItem >Drug & Food Interaction App</BreadcrumbItem>
+                    </Breadcrumb>
+
                         <DrugSelection
                             drugNames = { drugNames }
+                            drugSelectionOnClick = {this.drugSelectionOnClick}
                         />
-
                         <DrugDisplay
+                            currentDrugName = {currentDrugName}
                             foodNames = {foodNames}
-
+                            handleButtonOnClick = {this.handleButtonOnClick}
                         />
-
                 </div>
             );
         }
@@ -40,8 +54,7 @@ export default class HomeContainer extends  Component {
 
 
 // HomeContainer.PropTypes = {
-//    title: propTypes.String,
-//     index: propTypes.String
+//    xx: propTypes.String,
 // };
 
 
