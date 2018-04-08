@@ -5,19 +5,23 @@ import DrugDisplay from '../components/DrugDisplay';
 import { Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import '../css/HomeContainer.scss';
 
-let foodNames = ['Meat', 'Seafood','Eggs','Nuts'];
-let drugNames = ['Zoloft', 'Adderall','Alprazolam','Cymbalta','Metoprolol','Lexapro','Viagra','Omeprazole'];
+//let foodNames = ['Meat', 'Seafood','Eggs','Nuts'];
+// let drugNames = ['Zoloft', 'Adderall','Alprazolam','Cymbalta','Metoprolol','Lexapro','Viagra','Omeprazole'];
 export default class HomeContainer extends  Component {
     constructor(props) {
         super(props);
         this.state = {
+            drugNames:['Zoloft', 'Adderall','Alprazolam','Cymbalta','Metoprolol','Lexapro','Viagra','Omeprazole'],
+            foodNames:[]
         };
         this.handleButtonOnClick = this.handleButtonOnClick.bind(this);
         this.drugSelectionOnClick = this.drugSelectionOnClick.bind(this);
     };
 
     handleButtonOnClick() {
+        this.setState({});
         console.log("Check Indicator Button Clicked");
+        this.state.foodNames = ['Meat', 'Seafood','Eggs','Nuts'];
     }
 
 
@@ -36,12 +40,12 @@ export default class HomeContainer extends  Component {
                     </Breadcrumb>
 
                         <DrugSelection
-                            drugNames = { drugNames }
+                            drugNames = { this.state.drugNames }
                             drugSelectionOnClick = {this.drugSelectionOnClick}
                         />
                         <DrugDisplay
                             currentDrugName = {currentDrugName}
-                            foodNames = {foodNames}
+                            foodNames = {this.state.foodNames}
                             handleButtonOnClick = {this.handleButtonOnClick}
                         />
                 </div>
